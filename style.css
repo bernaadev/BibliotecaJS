@@ -1,0 +1,227 @@
+/* Configurações gerais */
+body {
+    background-color: #F4F4F9; /* Cinza claro para o fundo */
+    color: #333333; /* Cinza escuro para o texto */
+    font-family: 'Roboto', sans-serif; /* Fonte para o corpo do texto */
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Inclui padding e bordas no cálculo da largura e altura */
+    font-family: "Edu AU VIC WA NT Hand", cursive;
+}
+
+/* Estiliza o título principal */
+header {
+    background-color: #5D3AAB; /* Roxo profundo */
+    padding: 10px;
+}
+
+h1 {
+    color: #FFFFFF; /* Branco para o título */
+    text-align: center;
+    margin: 0;
+    font-size: 2.5em; /* Tamanho maior para o título */
+    font-family: "Playwrite CL", cursive;
+    animation: fadeIn 1s ease-out; /* Animação de fade-in */
+}
+
+/* Container principal para formulários e resultados */
+.main-container {
+    display: flex;
+    gap: 20px; /* Espaço entre os formulários e a seção de resultados */
+    margin: 20px;
+    flex-wrap: wrap; /* Permite que o layout se ajuste em telas menores */
+}
+
+/* Container para os formulários */
+.forms-container {
+    display: flex;
+    gap: 100px; /* Aumenta o espaço entre os formulários */
+    flex-direction: row; /* Alinha os formulários horizontalmente */
+    flex: 1; /* Permite que o container de formulários use o espaço disponível */
+}
+
+/* Estiliza cada seção de formulário */
+.form-section {
+    width: 300px; /* Define uma largura fixa para cada formulário */
+    margin-bottom: 20px; /* Adiciona espaço abaixo de cada formulário */
+}
+
+/* Estiliza todos os formulários */
+.form {
+    background-color: #FFFFFF; /* Branco para o fundo do formulário */
+    border-radius: 8px;
+    padding: 20px; /* Padding ajustado para um layout mais arejado */
+    width: 100%; /* Largura total dentro da seção */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra sutil para destacar o formulário */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transições suaves */
+    opacity: 0; /* Inicialmente invisível para animação */
+    animation: fadeInUp 1s ease-out forwards; /* Animação de fade-in e slide-up */
+}
+
+/* Animação de fade-in e slide-up */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Estiliza os rótulos (labels) */
+label {
+    color: #5D3AAB; /* Roxo profundo */
+    display: block;
+    margin-bottom: 8px; /* Espaço abaixo dos rótulos */
+    font-family: 'Lora', serif; /* Fonte para rótulos */
+}
+
+/* Estiliza os campos de entrada e seleção */
+input[type="text"], 
+input[type="number"], 
+select {
+    background-color: #F0F0F0; /* Cinza muito claro para o fundo dos campos */
+    color: #333333; /* Cinza escuro para o texto */
+    border: 1px solid #CCCCCC; /* Borda cinza clara */
+    border-radius: 4px;
+    padding: 10px; /* Padding ajustado */
+    width: 100%;
+    box-sizing: border-box;
+    margin-bottom: 12px; /* Espaço abaixo dos campos */
+    transition: border-color 0.3s ease, background-color 0.3s ease; /* Transições suaves */
+}
+
+input[type="text"]:focus, 
+input[type="number"]:focus, 
+select:focus {
+    border-color: #5D3AAB; /* Altera a cor da borda ao focar */
+    background-color: #FFFFFF; /* Altera o fundo ao focar */
+    outline: none; /* Remove o contorno padrão */
+}
+
+/* Remove setas de número para inputs do tipo number */
+input[type="number"] {
+    -moz-appearance: textfield; /* Remove setas de número no Firefox */
+}
+
+input[type="number"]::-webkit-inner-spin-button, 
+input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none; /* Remove setas de número no Chrome */
+    margin: 0; 
+}
+
+/* Estiliza os botões */
+button {
+    background-color: #5D3AAB; /* Roxo profundo */
+    color: #FFFFFF; /* Branco para o texto do botão */
+    border: none;
+    padding: 12px 20px; /* Padding ajustado */
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px; /* Tamanho da fonte do botão */
+    margin-top: 10px; /* Ajusta a margem superior do botão */
+    position: relative; /* Necessário para o efeito de sombra */
+    overflow: hidden; /* Garante que o efeito de sombra não exceda o botão */
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease; /* Transições suaves */
+}
+
+/* Efeito hover: muda a cor, aumenta o botão e adiciona uma animação */
+button:hover {
+    background-color: #462A77; /* Roxo escuro para o hover */
+    transform: scale(1.05); /* Leve aumento de tamanho no hover */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Intensifica a sombra no hover */
+}
+
+/* Efeito de foco: adiciona uma borda e muda a cor do fundo */
+button:focus {
+    outline: none; /* Remove o contorno padrão */
+    box-shadow: 0 0 0 3px rgba(93, 58, 171, 0.5); /* Adiciona uma borda externa azulada */
+    background-color: #4A2C8F; /* Muda a cor de fundo quando focado */
+}
+
+/* Animação de pulsação e brilho */
+button::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 300%;
+    height: 300%;
+    background: rgba(93, 58, 171, 0.2);
+    border-radius: 50%;
+    transition: width 0.3s, height 0.3s;
+    transform: translate(-50%, -50%);
+    z-index: 0;
+    opacity: 0;
+}
+
+button:hover::before {
+    width: 400%;
+    height: 400%;
+    opacity: 1;
+}
+
+/* Estiliza a seção de resultados */
+#resultado {
+    color: #333333; /* Cinza escuro para o texto */
+    text-align: center;
+    margin-top: 20px;
+    margin-right: 150px;
+    flex: 2; /* Faz com que a seção de resultados ocupe mais espaço disponível em relação aos formulários */
+    max-width: 600px; /* Define a largura máxima da seção de resultados */
+    animation: fadeIn 1s ease-out; /* Animação de fade-in */
+}
+
+/* Animação de fade-in para a seção de resultados */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Estiliza cada livro individualmente */
+.livro {
+    background-color: #FFFFFF; /* Branco para o fundo dos livros */
+    border: 1px solid #DDDDDD; /* Borda cinza clara */
+    border-radius: 8px;
+    padding: 15px;
+    margin: 10px 0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra sutil para destacar os livros */
+    transition: box-shadow 0.3s ease; /* Transição suave para a sombra */
+}
+
+.livro:hover {
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Intensifica a sombra ao passar o mouse */
+}
+.notification {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background-color: #4CAF50; /* Verde para sucesso */
+    color: white;
+    padding: 15px;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    opacity: 0;
+    transform: translateY(-20px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+/* Visível e animação de exibição */
+.notification.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Oculta a notificação */
+.hidden {
+    display: none;
+}
